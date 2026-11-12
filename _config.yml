@@ -4,9 +4,11 @@ title: Nhasala Joshi
 tagline: Building inclusive tech ecosystems
 description: Nhasala Joshi is an engineer turned development practitioner working on inclusive tech ecosystems, digital rights, gender data, civic tech, and internet governance in Nepal. Co-founder and Executive Director of Women Leaders in Technology (WLiT).
 
-# CHANGE: the booked domain, with https and no trailing slash.
-url: "https://www.example.com"
-baseurl: ""
+# CHANGE to the booked domain (https, no trailing slash) when it is connected. For now, the GitHub Pages host.
+url: "https://nhasalajoshi.github.io"
+# The site is served from the GitHub Pages project address (https://nhasalajoshi.github.io/nhasalajoshiweb/).
+# CHANGE to "" when the custom domain is connected, at the same time as url.
+baseurl: "/nhasalajoshiweb"
 lang: en
 
 # Public contact address (confirmed). A phone number is deliberately not published.

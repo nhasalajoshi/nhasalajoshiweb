@@ -24,7 +24,7 @@ echo "4. First person for Nhasala in published copy (heuristic; review any hits)
 if grep -rIn -e ">I " -e " I'm " -e " my " -e " our " index.html about.html projects.html writing.html contact.html _data | grep -v "I don't believe"; then fail=1; else echo "   none"; fi
 
 echo "5. Placeholders that must change before launch (warnings only)"
-grep -n "example.com" _config.yml | sed 's/^/   /'
+grep -n "example.com\|^url:\|^baseurl:" _config.yml | sed 's/^/   /'
 grep -n "robots_noindex\|show_draft_flags" _config.yml | sed 's/^/   /'
 
 [ $fail -eq 0 ] && echo "OK" || echo "Problems found above"

@@ -62,7 +62,7 @@ Two switches in `_config.yml` keep unfinished content safe:
 3. Rename `CNAME.template` to `CNAME` and put the booked domain inside it (one line, no https).
 4. At the domain registrar, point the domain to GitHub. For an apex domain, add the four A records GitHub lists in its custom domain documentation (check that page for the current addresses). For `www`, add a CNAME record pointing to `YOUR-USERNAME.github.io`.
 5. Back in Settings, Pages, enter the custom domain, wait for the DNS check, then tick "Enforce HTTPS".
-6. Set `url:` in `_config.yml` to the final address.
+6. In `_config.yml`, set `url:` to the final address and `baseurl:` to `""`. (Until then the site runs at `https://nhasalajoshi.github.io/nhasalajoshiweb/`, which needs `baseurl: "/nhasalajoshiweb"`.)
 7. Replace `assets/img/og.png` (a draft social image, 1200 x 630) with final artwork.
 
 ## Content checklist before launch

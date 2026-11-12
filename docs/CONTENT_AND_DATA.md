@@ -71,7 +71,7 @@ List of `{title, url}`: About, Projects, Writing and speaking, Contact.
 | Key | Notes |
 |---|---|
 | `title`, `tagline`, `description` | Used in titles, meta tags, the footer tagline, and JSON-LD |
-| `url`, `baseurl` | `url` must become the booked domain with https and no trailing slash. Currently `https://www.example.com`. |
+| `url`, `baseurl` | Currently `https://nhasalajoshi.github.io` with `baseurl: "/nhasalajoshiweb"` (the GitHub Pages project address). When the custom domain is connected, set `url` to the booked domain (https, no trailing slash) and `baseurl` to `""` at the same time. |
 | `email` | Public contact address: `nhasala.joshi@gmail.com` (confirmed by the client). |
 | `linkedin`, `wlit_url` | External links |
 | `license_name`, `license_url` | Footer license line. Currently CC BY 4.0. |
