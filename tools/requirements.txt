@@ -1,0 +1,6 @@
+# Only needed to regenerate the bordered portrait. The website itself needs none of this.
+rembg
+onnxruntime
+opencv-python-headless
+pillow
+numpy
