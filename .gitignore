@@ -5,3 +5,9 @@ vendor/
 .sass-cache/
 .jekyll-metadata
 .DS_Store
+
+# Original, full-size photos stay out of the public repository. Keep them somewhere private.
+source-assets/
+
+# Private list of funder and agency names that tools/check.sh searches for. Never commit it.
+tools/blocked-names.txt

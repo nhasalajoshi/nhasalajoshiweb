@@ -1,18 +1,40 @@
-# Expertise per area id, plus the leadership list for the plain block on About.
-community:
-  - Fellowship and program design
-  - Mentoring and community building
-  - Event and convening design
-inclusion:
-  - Inclusive program design
-  - Gender and technology
-data:
-  - Open data and gender data
-  - Civic technology
-governance:
-  - Multistakeholder facilitation
-  - Youth engagement in internet policy
-leadership:
-  - Organizational leadership and strategy
-  - Team building and operations
-  - Partnerships
+- title: Community and ecosystem building
+  pillar: community
+  items:
+    - Fellowship and bootcamp design
+    - Community and chapter building
+    - Summits and regional networks
+    - Mentoring and coaching
+    - Partnership development
+
+- title: Inclusion
+  pillar: inclusion
+  items:
+    - Gender, queer, and trans inclusion in technology
+    - Inclusive program design
+    - Women's leadership pathways
+    - Feminist technology
+
+- title: Digital rights, data, and civic tech
+  pillar: data
+  items:
+    - Gender data and open data
+    - Digital rights advocacy
+    - Online gender-based violence and content moderation
+    - Data and digital literacy training
+    - AI tools for social impact
+
+- title: Internet governance
+  pillar: governance
+  items:
+    - Youth participation in internet governance
+    - Multistakeholder facilitation
+    - Digital policy dialogue
+
+- title: Leadership and operations
+  pillar: ""
+  items:
+    - Nonprofit leadership and governance
+    - Strategy and program design
+    - Multi-partner program management
+    - Compliance and financial controls

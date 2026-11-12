@@ -1,3 +1,1 @@
-{%- if site.show_draft_flags and include.item.verified == false -%}
-<span class="draft" title="Not yet confirmed">Check</span>
-{%- endif -%}
+{% if site.show_draft_flags and include.verified == false %}<span class="draft" title="Draft content that needs checking before launch">Check</span>{% endif %}

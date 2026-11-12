@@ -1,19 +1,27 @@
-# Newest first. The home page shows the first three.
-- year: 2025
-  title: "Women's Liberty On The Internet: A Take On Agency And Ownership"
+# Publications. Add outlet and url when known. verified: false shows a "Check" flag in draft mode.
+- title: "Women's Liberty On The Internet: A Take On Agency And Ownership"
+  year: 2025
   type: Commentary
   role: Author
+  outlet: To be added
   url: ""
+  summary: Examines digital rights, gendered online spaces, and women's agency in Nepal's internet landscape.
   verified: true
-- year: 2023
-  title: "Microfinance in Nepal: Trends and Challenges"
+
+- title: "Microfinance in Nepal: Trends and Challenges"
+  year: 2023
   type: Research paper
   role: Contributor
+  outlet: To be added
   url: ""
+  summary: A landscape study of policies and data on microfinance and women's entrepreneurship in Nepal. Nhasala contributed to the information collection.
   verified: true
-- year: 2020
-  title: Saving jobs during Covid crisis
+
+- title: "Saving jobs during Covid crisis"
+  year: 2020
   type: Newspaper article
   role: Co-author
+  outlet: To be added
   url: ""
+  summary: A co-written article on Nepal's economic situation after the pandemic.
   verified: true

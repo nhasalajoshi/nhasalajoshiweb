@@ -1,45 +1,64 @@
+# Site settings. Edit the values marked CHANGE before launch.
+
 title: Nhasala Joshi
-tagline: Building inclusive tech ecosystems.
-description: >-
-  Nhasala Joshi is an engineer turned development practitioner, and the
-  co-founder and Executive Director of Women Leaders in Technology (WLiT) in Nepal.
+tagline: Building inclusive tech ecosystems
+description: Nhasala Joshi is an engineer turned development practitioner working on inclusive tech ecosystems, digital rights, gender data, civic tech, and internet governance in Nepal. Co-founder and Executive Director of Women Leaders in Technology (WLiT).
+
+# CHANGE: the booked domain, with https and no trailing slash.
+url: "https://www.example.com"
+baseurl: ""
 lang: en
-# `url` and `baseurl` are deliberately unset. On GitHub Pages they are filled in
-# automatically (for example /nj for a project site). Setting baseurl to "" breaks
-# every asset path on a project site. Set both only when a custom domain is added.
 
-author:
-  name: Nhasala Joshi
-  job_title: Co-founder and Executive Director
-  employer: Women Leaders in Technology (WLiT)
-  employer_url: "" # Confirm WLiT website
-  location: Kathmandu, Nepal # Confirm
-  # Placeholders. Replace with confirmed contact details.
-  email: hello@example.com
-  linkedin: https://www.linkedin.com/
+# Public contact address (confirmed). A phone number is deliberately not published.
+email: "nhasala.joshi@gmail.com"
+linkedin: "https://www.linkedin.com/in/nhasalajoshi/"
+wlit_url: "https://wlit.org/"
 
-# Optional hero photo, for example /assets/img/hero.jpg. Leave empty for the illustration.
-hero_image: ""
+# Content license shown in the footer. CHANGE if a different Creative Commons license is chosen.
+license_name: "CC BY 4.0"
+license_url: "https://creativecommons.org/licenses/by/4.0/"
 
-# Keep both of these true until the site launches. Do not turn off without the owner's approval.
+# Portrait (used in the home banner and on the About page).
+# portrait_small is an optional smaller copy (700px wide) used for srcset on small screens.
+portrait: /assets/img/nhasala-joshi.jpg
+portrait_small: /assets/img/nhasala-joshi-700.jpg
+portrait_width: 1400
+portrait_height: 1750
+portrait_alt: "Portrait of Nhasala Joshi"
+
+# Bordered cutout of the portrait used in the home banner (WebP with transparency, a white sticker-style outline baked in).
+portrait_cutout: /assets/img/nhasala-sticker.webp
+portrait_cutout_small: /assets/img/nhasala-sticker-600.webp
+portrait_cutout_width: 1200
+portrait_cutout_height: 1470
+
+# Draft controls. Set both to false when the content is verified and the site goes live.
 robots_noindex: true
 show_draft_flags: true
 
-license:
-  name: CC BY 4.0
-  url: https://creativecommons.org/licenses/by/4.0/
+# Social preview image (1200 x 630). Replace the placeholder before launch.
+og_image: /assets/img/og.png
+
+# No theme: the site uses its own layouts and CSS. Without this, the github-pages gem adds an unused Primer stylesheet.
+theme: null
 
 plugins:
   - jekyll-sitemap
 
-markdown: kramdown
-permalink: pretty
-
 exclude:
-  - Gemfile
-  - Gemfile.lock
   - README.md
   - CONTRIBUTING.md
-  - docs/
-  - vendor/
-  - .bundle/
+  - docs
+  - tools
+  - source-assets
+  - CNAME.template
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

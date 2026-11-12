@@ -1,26 +1,24 @@
+# Speaker kit. Topics and bios are drafts in third person.
 topics:
   - Building inclusive tech ecosystems
-  - Women's leadership in technology
-  - Online gender-based violence and digital rights
-  - Youth participation in internet governance
-bio_short: >-
-  Nhasala Joshi is an engineer turned development practitioner, and the
-  co-founder and Executive Director of Women Leaders in Technology (WLiT), Nepal.
-bio_long: >-
-  Nhasala Joshi is an engineer turned development practitioner, and the
-  co-founder and Executive Director of Women Leaders in Technology (WLiT), Nepal.
-  Over more than a decade, she has led WLiT through 14 fellowship cohorts,
-  supported more than 200 women tech professionals, and convened more than
-  1,000 attendees at flagship community events. Her work spans community and
-  ecosystem building, inclusion, digital rights, data, and civic tech, and
-  internet governance.
-downloads:
-  - label: Headshot (high resolution)
-    url: ""
-  - label: Bio as a text file
-    url: ""
+  - Feminist technology and digital rights
+  - Gender data and civic tech
+  - Young people in internet governance
+  - Building and leading a women-in-tech movement
+  - Digital safety and hygiene
+
+short_bio: >-
+  Nhasala Joshi is the co-founder and Executive Director of Women Leaders in Technology (WLiT) in Nepal. An engineer turned development practitioner, she works on inclusive tech ecosystems, digital rights, gender data, and internet governance, and serves as a multi-stakeholder group member of Youth IGF Nepal.
+
+long_bio: >-
+  Nhasala Joshi is an engineer turned development practitioner working at the intersection of gender, technology, and rights. She co-founded Women Leaders in Technology (WLiT) in 2015 and now serves as its Executive Director. Under her leadership WLiT has run 14 fellowship cohorts and built a community of more than 200 women tech professionals, while widening its work to include queer and trans communities and digital rights. Nhasala advises and consults for Open Knowledge Nepal, where she initiated MulCAM, an open multilingual corpus and moderation tool for preventing online gender-based violence. She is a multi-stakeholder group member of Youth IGF Nepal and a member of the Internet Society Nepal Chapter, and she has helped lead GDG Kathmandu and Women Techmakers community events. She does not believe technology is neutral, and she works to make it more just.
+
 recognition:
-  - year: To be confirmed
-    title: "[Placeholder: award or recognition]"
-    meta: ""
-    verified: false
+  - title: Appreciation Award for work in information and communication technology
+    year: 2023
+    by: Nepalese Chamber of Commerce and Nepal Women Chamber
+    verified: true
+  - title: Women Techmakers Ambassador video feature
+    year: 2019
+    by: Women Techmakers
+    verified: true

@@ -1,7 +1,74 @@
-# Referenced by id from pillars.yml `orgs`.
+# Organizations and roles. verified: false shows a "Check" flag while show_draft_flags is on.
+# Years for several entries differ between the CV and LinkedIn and must be confirmed.
+
 - id: wlit
   name: Women Leaders in Technology (WLiT), Nepal
+  short: WLiT
   role: Co-founder and Executive Director
   years: 2015 to present
-  url: ""
+  url: https://wlit.org/
+  verified: true
+
+- id: okn
+  name: Open Knowledge Nepal
+  short: Open Knowledge Nepal
+  role: Strategic advisor and consultant
+  years: 2024 to present
+  url: "#"
   verified: false
+
+- id: yigf
+  name: Youth IGF Nepal
+  short: Youth IGF Nepal
+  role: Multi-stakeholder group member
+  years: 2024 to present
+  url: "#"
+  verified: false
+
+- id: isoc
+  name: Internet Society Nepal Chapter
+  short: Internet Society Nepal Chapter
+  role: Member
+  years: 2025 to present
+  url: "#"
+  verified: true
+
+- id: gdg
+  name: GDG Kathmandu
+  short: GDG Kathmandu
+  role: Co-organizer and advisor
+  years: 2017 to 2025
+  url: "#"
+  verified: false
+
+- id: wtm
+  name: Women Techmakers Kathmandu
+  short: Women Techmakers
+  role: Ambassador
+  years: 2016 to 2023
+  url: "#"
+  verified: false
+
+- id: shapers
+  name: Global Shapers Kathmandu Hub
+  short: Global Shapers Kathmandu
+  role: Member and alumna
+  years: 2020 to present
+  url: "#"
+  verified: true
+
+- id: women-lead
+  name: Women LEAD Nepal
+  short: Women LEAD Nepal
+  role: Member and alumna
+  years: 2013 to present
+  url: "#"
+  verified: true
+
+- id: purak
+  name: Purak Asia
+  short: Purak Asia
+  role: Mentor
+  years: 2024
+  url: "#"
+  verified: true

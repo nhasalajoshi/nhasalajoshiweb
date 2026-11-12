@@ -1,7 +1,36 @@
-# Talks, panels, and convenings. Newest first.
-- year: To be confirmed
-  title: Youth IGF Summit
+# Speaking, facilitation, and convening. Add dates, links, and photos as they are confirmed.
+- title: Youth IGF Summit
   role: Organizer and facilitator
-  place: Nepal
-  url: ""
+  year: To be confirmed
+  note: Brought together youth, civil society, government, and the technical community. More than 150 participants.
+  verified: false
+
+- title: Internet Governance Forum 2025, Norway
+  role: Community representative
+  year: 2025
+  note: Represented the Internet Society Nepal Chapter community.
+  verified: true
+
+- title: IWD South Asia Summit
+  role: Initiator and panel lead
+  year: To be confirmed
+  note: Panels on diversity, equity, and inclusion across South Asian chapters.
+  verified: false
+
+- title: Google I/O Extended and DevFest
+  role: Lead organizer
+  year: To be confirmed
+  note: Flagship developer events in Kathmandu with more than 1,000 attendees across editions.
+  verified: false
+
+- title: Gender Data 101 and digital literacy workshops
+  role: Facilitator
+  year: 2024 to present
+  note: Training on data and digital skills.
+  verified: false
+
+- title: Digital safety and hygiene sessions
+  role: Facilitator
+  year: To be confirmed
+  note: Sessions for young women at a leadership summit.
   verified: false

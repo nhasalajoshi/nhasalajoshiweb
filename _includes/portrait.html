@@ -1,5 +1,5 @@
-{%- if site.data.about.portrait != "" -%}
-<img class="portrait" src="{{ site.data.about.portrait | relative_url }}" alt="{{ site.data.about.portrait_alt }}" width="600" height="750" loading="lazy">
-{%- else -%}
-{% include placeholder.html label="Portrait" ratio="4 / 5" %}
-{%- endif -%}
+{% if site.portrait and site.portrait != "" %}
+<img class="portrait" src="{{ site.portrait | relative_url }}"{% if site.portrait_small and site.portrait_small != "" %} srcset="{{ site.portrait_small | relative_url }} 700w, {{ site.portrait | relative_url }} {{ site.portrait_width }}w" sizes="{{ include.sizes | default: '(min-width: 52rem) 22rem, 100vw' }}"{% endif %} width="{{ site.portrait_width }}" height="{{ site.portrait_height }}" alt="{{ site.portrait_alt }}" loading="{{ include.loading | default: 'lazy' }}"{% if include.priority %} fetchpriority="{{ include.priority }}"{% endif %} decoding="async">
+{% else %}
+<div class="ph portrait" style="aspect-ratio: {{ include.ratio | default: '4 / 5' }}" role="img" aria-label="Placeholder for a portrait of Nhasala Joshi"><span>Portrait placeholder</span></div>
+{% endif %}

@@ -1,93 +1,105 @@
 ---
 layout: page
 title: About
-lede: An engineer turned development practitioner, building inclusive tech ecosystems in Nepal.
-description: About Nhasala Joshi, co-founder and Executive Director of Women Leaders in Technology (WLiT), Nepal, and her work on inclusion, digital rights, data, and internet governance.
+permalink: /about/
+lede: Engineer turned development practitioner, working at the intersection of gender, technology, and rights.
+description: About Nhasala Joshi, co-founder and Executive Director of Women Leaders in Technology (WLiT) in Nepal, and her four areas of work, which are community building, inclusion, digital rights and data, and internet governance.
 ---
-{%- assign about = site.data.about -%}
-<section class="band">
-  <div class="wrap about">
-    <aside class="about__aside" aria-label="Quick facts">
-      {% include portrait.html %}
-      <dl class="facts">
-        {%- for f in about.glance %}
-        <div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
-        {%- endfor %}
-      </dl>
-    </aside>
-    <div class="about__main">
-      <h2>Her story</h2>
-      <div class="prose">
-        {%- for p in about.story %}
-        <p>{{ p }}</p>
-        {%- endfor %}
-      </div>
-      <h3 class="path-title">Path</h3>
-      <ol class="path">
-        {%- for step in about.path %}
-        <li><h4>{{ step.title }}</h4><p>{{ step.text }}</p></li>
-        {%- endfor %}
-      </ol>
+<div class="wrap about">
+  <aside class="about__aside">
+    {% include portrait.html ratio="4 / 5" %}
+    <dl class="facts">
+      {% for g in site.data.about.glance %}
+      <div><dt>{{ g.label }}</dt><dd>{{ g.value }}</dd></div>
+      {% endfor %}
+    </dl>
+  </aside>
+
+  <div class="about__main">
+    <div class="prose">
+      <p>Nhasala Joshi trained as an electronics and communication engineer and began her career building hardware and prototypes, including IoT and automation products and research and development projects in a maker space. That hands-on background still shapes how she works: she prefers building something people can use to describing what should exist.</p>
+      <p>In 2015 she co-founded Women Leaders in Technology (WLiT), Nepal's pioneering women-in-tech nonprofit, first as Founding President and Program Lead and, since 2021, as Executive Director. Under her leadership WLiT has run 14 fellowship cohorts and built a community of more than 200 women tech professionals, while widening its work to include queer and trans communities, digital rights, and data.</p>
+      <p>Alongside WLiT, Nhasala advises and consults for Open Knowledge Nepal, where she initiated MulCAM. She is a multi-stakeholder group member of Youth IGF Nepal and a member of the Internet Society Nepal Chapter, and she has helped lead GDG Kathmandu and Women Techmakers events that drew more than a thousand attendees.</p>
+      <p>Nhasala does not believe technology is neutral, and she works to make it more just.</p>
     </div>
+
+    <h2>From making to leading</h2>
+    <ol class="path">
+      {% for s in site.data.about.path %}
+      <li><h3>{{ s.title }}</h3><p>{{ s.text }}</p></li>
+      {% endfor %}
+    </ol>
+  </div>
+</div>
+
+<section class="band band--tint" id="areas" aria-labelledby="areas-h">
+  <div class="wrap">
+    <h2 id="areas-h">Areas of work</h2>
+    <p class="section-intro">Community building is the core of Nhasala's work. Inclusion, digital rights and data, and internet governance grow out of it.</p>
+
+    {% for area in site.data.pillars %}
+    {% assign exp = site.data.expertise | where: "pillar", area.id | first %}
+    {% assign related = site.data.projects | where: "pillar", area.id %}
+    <section class="area-block p-{{ area.id }}{% if area.featured %} area-block--lead{% endif %}" id="{{ area.id }}" aria-labelledby="{{ area.id }}-h">
+      <div class="area-block__head">
+        <span class="icon-bubble">{% include icon.html name=area.id %}</span>
+        <h3 id="{{ area.id }}-h">{{ area.name }}</h3>
+      </div>
+      <div class="area-block__body">
+        <p class="statement">{{ area.statement }}</p>
+        <div class="area-cols">
+          <div>
+            <h4>What this looks like</h4>
+            <ul class="plain dots">{% for l in area.looks_like %}<li>{{ l }}</li>{% endfor %}</ul>
+          </div>
+          {% if exp %}
+          <div>
+            <h4>Expertise</h4>
+            <ul class="plain dots">{% for i in exp.items %}<li>{{ i }}</li>{% endfor %}</ul>
+          </div>
+          {% endif %}
+        </div>
+        <h4>Organizations</h4>
+        <ul class="inline-list">
+          {% for oid in area.orgs %}
+          {% assign org = site.data.organizations | where: "id", oid | first %}
+          <li>{% if org.url and org.url != "#" %}<a href="{{ org.url }}" rel="noopener">{{ org.short }}</a>{% else %}{{ org.short }}{% endif %}</li>
+          {% endfor %}
+        </ul>
+        <h4>Selected projects</h4>
+        <ul class="plain dots">
+          {% for r in related %}<li><a href="{{ '/projects/' | relative_url }}#{{ r.id }}">{{ r.title }}</a></li>{% endfor %}
+        </ul>
+        <p class="more"><a class="textlink" href="{{ '/projects/' | relative_url }}#{{ area.id }}" aria-label="See projects with full details: {{ area.name }}">See these projects with full details</a></p>
+      </div>
+    </section>
+    {% endfor %}
+
+    {% assign lead_exp = site.data.expertise | where: "pillar", "" | first %}
+    {% if lead_exp %}
+    <section class="area-block area-block--plain" aria-labelledby="ops-h">
+      <div class="area-block__head"><h3 id="ops-h">{{ lead_exp.title }}</h3></div>
+      <div class="area-block__body">
+        <ul class="plain dots">{% for i in lead_exp.items %}<li>{{ i }}</li>{% endfor %}</ul>
+      </div>
+    </section>
+    {% endif %}
   </div>
 </section>
 
-<section class="band band--tint" id="areas" aria-labelledby="areas-title">
+<section class="band" aria-labelledby="roles-h">
   <div class="wrap">
-    <h2 id="areas-title">Areas of work</h2>
-    <p class="lede">Four connected areas, each with its own color across the site.</p>
-    {%- for a in site.data.pillars %}
-    <article class="area-block p-{{ a.id }}{% if forloop.first %} area-block--lead{% endif %}" id="{{ a.id }}" aria-labelledby="{{ a.id }}-title">
-      <div class="area-cols">
-        <div class="area-block__head">
-          <h3 id="{{ a.id }}-title">{{ a.name }} {% include flag.html item=a %}</h3>
-          <p class="statement">{{ a.statement }}</p>
-        </div>
-        <div class="area-block__body">
-          <h4>What this looks like</h4>
-          <ul class="inline-list">{% for x in a.looks_like %}<li>{{ x }}</li>{% endfor %}</ul>
-          <h4>Expertise</h4>
-          <ul class="inline-list">{% for x in site.data.expertise[a.id] %}<li>{{ x }}</li>{% endfor %}</ul>
-          <h4>Organizations</h4>
-          <ul class="inline-list">
-            {%- for oid in a.orgs %}{% assign o = site.data.organizations | where: "id", oid | first %}<li>{{ o.name }}</li>{% endfor %}
-          </ul>
-          {%- assign ap = site.data.projects | where: "pillar", a.id %}
-          {%- if ap.size > 0 %}
-          <h4>Selected projects</h4>
-          <ul class="inline-list">
-            {%- for p in ap %}<li><a href="{{ '/projects/' | relative_url }}#{{ p.id }}">{{ p.title }}</a></li>{% endfor %}
-          </ul>
-          {%- endif %}
-          <p><a class="textlink" href="{{ '/projects/' | relative_url }}#{{ a.id }}">All projects in this area</a></p>
-        </div>
-      </div>
-    </article>
-    {%- endfor %}
-    <article class="area-block area-block--plain" aria-labelledby="leadership-title">
-      <div class="area-cols">
-        <div class="area-block__head"><h3 id="leadership-title">Leadership and operations</h3></div>
-        <div class="area-block__body">
-          <ul class="inline-list">{% for x in site.data.expertise.leadership %}<li>{{ x }}</li>{% endfor %}</ul>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="band" aria-labelledby="roles-title">
-  <div class="wrap">
-    <h2 id="roles-title">Roles and affiliations</h2>
-    <ul class="rows">
-      {%- for o in site.data.organizations %}
+    <h2 id="roles-h">Roles and affiliations</h2>
+    <ul class="rows rows--compact">
+      {% for o in site.data.organizations %}
       <li class="row">
         <p class="row__year">{{ o.years }}</p>
         <div>
-          <h3 class="row__title">{% if o.url != "" %}<a href="{{ o.url }}">{{ o.name }}</a>{% else %}{{ o.name }}{% endif %} {% include flag.html item=o %}</h3>
+          <h3 class="row__title">{% if o.url and o.url != "#" %}<a href="{{ o.url }}" rel="noopener">{{ o.name }}</a>{% else %}{{ o.name }}{% endif %} {% include flag.html verified=o.verified %}</h3>
           <p class="row__meta">{{ o.role }}</p>
         </div>
       </li>
-      {%- endfor %}
+      {% endfor %}
     </ul>
   </div>
 </section>

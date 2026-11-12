@@ -1,1 +1,1 @@
-<div class="ph"{% if include.ratio %} style="aspect-ratio: {{ include.ratio }}"{% endif %}><span>{{ include.label | default: "Image" }}</span></div>
+<div class="ph" style="aspect-ratio: {{ include.ratio | default: '16 / 9' }}" role="img" aria-label="Placeholder: {{ include.label }}"><span>{{ include.label }}</span></div>

@@ -1,70 +1,51 @@
 ---
 layout: page
 title: Contact
-lede: Nhasala welcomes invitations to speak, advise, partner, and mentor.
-description: Contact Nhasala Joshi about speaking, advisory work, partnerships, or mentoring.
+permalink: /contact/
+lede: Nhasala works with organizations and communities on talks, advice, partnerships, and mentoring.
+description: Invite Nhasala Joshi to speak, advise, partner, or mentor. Contact details and what to include in a first message.
 ---
-{%- assign mail = site.author.email -%}
-<section class="band">
-  <div class="wrap">
-    <h2>Ways to work together</h2>
-    <ul class="rows">
-      <li class="row">
-        <p class="row__year">Speaking</p>
-        <div>
-          <h3 class="row__title">Keynotes, panels, and workshops</h3>
-          <p class="row__meta">Events on inclusive technology, women's leadership, digital rights, and internet governance.</p>
-          <p><a class="textlink" href="mailto:{{ mail }}?subject=Speaking%20invitation">Email a speaking invitation</a></p>
-        </div>
-      </li>
-      <li class="row">
-        <p class="row__year">Advisory</p>
-        <div>
-          <h3 class="row__title">Program and strategy advice</h3>
-          <p class="row__meta">Designing fellowships, inclusion programs, and community initiatives.</p>
-          <p><a class="textlink" href="mailto:{{ mail }}?subject=Advisory%20request">Email an advisory request</a></p>
-        </div>
-      </li>
-      <li class="row">
-        <p class="row__year">Partnerships</p>
-        <div>
-          <h3 class="row__title">Collaborations and partnerships</h3>
-          <p class="row__meta">Joint programs, research, and convenings.</p>
-          <p><a class="textlink" href="mailto:{{ mail }}?subject=Partnership%20inquiry">Email a partnership inquiry</a></p>
-        </div>
-      </li>
-      <li class="row">
-        <p class="row__year">Mentoring</p>
-        <div>
-          <h3 class="row__title">Mentoring</h3>
-          <p class="row__meta">For women and gender-diverse people building careers in technology.</p>
-          <p><a class="textlink" href="mailto:{{ mail }}?subject=Mentoring%20request">Email a mentoring request</a></p>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
+<div class="wrap contact">
+  <ul class="rows">
+    <li class="row">
+      <h2 class="row__year row__year--wide">Speaking and moderating</h2>
+      <div>
+        <p>Keynotes, panels, workshops, and moderated conversations on inclusive tech ecosystems, feminist technology, digital rights, gender data, and internet governance.</p>
+        <p><a class="textlink" href="mailto:{{ site.email }}?subject=Speaking%20invitation">Send a speaking invitation</a></p>
+      </div>
+    </li>
+    <li class="row">
+      <h2 class="row__year row__year--wide">Advisory and consulting</h2>
+      <div>
+        <p>Program design, fellowship and community models, organizational strategy, and digital inclusion.</p>
+        <p><a class="textlink" href="mailto:{{ site.email }}?subject=Advisory%20request">Ask about advisory work</a></p>
+      </div>
+    </li>
+    <li class="row">
+      <h2 class="row__year row__year--wide">Partnerships and collaboration</h2>
+      <div>
+        <p>Joint programs, research, open data, and civic tech projects that fit the four areas of work.</p>
+        <p><a class="textlink" href="mailto:{{ site.email }}?subject=Partnership%20or%20collaboration">Propose a collaboration</a></p>
+      </div>
+    </li>
+    <li class="row">
+      <h2 class="row__year row__year--wide">Mentoring</h2>
+      <div>
+        <p>Mentoring for young women and early-career leaders in technology, and for community organizers.</p>
+        <p><a class="textlink" href="mailto:{{ site.email }}?subject=Mentoring%20request">Request mentoring</a></p>
+      </div>
+    </li>
+  </ul>
 
-<section class="band band--tint" aria-labelledby="include-title">
-  <div class="wrap prose">
-    <h2 id="include-title">What to include in a first message</h2>
-    <ul>
-      <li>Who you are and the organization you represent</li>
-      <li>What you are inviting Nhasala to do</li>
-      <li>Date, place, and format (in person or online)</li>
-      <li>Audience and expected size</li>
-      <li>Whether travel and an honorarium are covered</li>
+  <section class="band" aria-labelledby="first-h">
+    <h2 id="first-h">What to include in a first message</h2>
+    <ul class="plain">
+      <li>The event, program, or project, and who it is for</li>
+      <li>Date, location, and format (in person, online, or hybrid)</li>
+      <li>What you would like Nhasala to do, and how long she would have</li>
+      <li>Any travel, access, or language needs</li>
     </ul>
-  </div>
-</section>
-
-<section class="band" aria-labelledby="direct-title">
-  <div class="wrap">
-    <h2 id="direct-title">Direct contact</h2>
-    <ul class="rows rows--compact">
-      <li class="row"><p class="row__year">Email</p><div><p class="row__title"><a href="mailto:{{ mail }}">{{ mail }}</a></p></div></li>
-      <li class="row"><p class="row__year">LinkedIn</p><div><p class="row__title"><a href="{{ site.author.linkedin }}" rel="me">Nhasala Joshi on LinkedIn</a></p></div></li>
-    </ul>
-    <p class="note">If anything on this site is hard to use with your device or assistive technology, email <a href="mailto:{{ mail }}?subject=Accessibility">{{ mail }}</a> and it will be fixed.</p>
-  </div>
-</section>
+    <p>Write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>, or connect on <a href="{{ site.linkedin }}" rel="me noopener">LinkedIn</a>.</p>
+    <p class="muted">This site aims to meet WCAG 2.2 AA. To report an access problem, write to the same address with the subject "Website accessibility".</p>
+  </section>
+</div>

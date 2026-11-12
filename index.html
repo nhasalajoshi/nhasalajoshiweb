@@ -1,72 +1,81 @@
 ---
 layout: default
-title: Home
+description: Nhasala Joshi is an engineer turned development practitioner working on inclusive tech ecosystems, digital rights, gender data, civic tech, and internet governance in Nepal. Co-founder and Executive Director of Women Leaders in Technology (WLiT).
 ---
-<section class="hero on-ink{% if site.hero_image != '' %} hero--image{% endif %}"{% if site.hero_image != '' %} style="--hero-img: url('{{ site.hero_image | relative_url }}')"{% endif %}>
+{% assign cutout = site.portrait_cutout %}
+<section class="hero{% unless cutout and cutout != "" %} hero--nophoto{% endunless %}" aria-labelledby="hero-h">
   <div class="wrap hero__inner">
     <div class="hero__text">
-      <h1>Building inclusive tech ecosystems.</h1>
-      <p class="hero__sub">Digital rights and feminist tech advocate</p>
-      <p class="hero__lede">Nhasala Joshi is an engineer turned development practitioner, and the co-founder and Executive Director of Women Leaders in Technology (WLiT) in Nepal.</p>
-      <div class="hero__actions">
-        <a class="btn btn--gold" href="{{ '/about/' | relative_url }}#areas">Explore the work</a>
+      <h1 id="hero-h">Building inclusive tech ecosystems.</h1>
+      <p class="hero__sub"><span>Digital rights and feminist tech advocate</span></p>
+      <p class="hero__lede">Co-founder and Executive Director of Women Leaders in Technology (WLiT), Nepal.</p>
+      <p class="hero__actions">
+        <a class="btn btn--ink" href="{{ '/about/#areas' | relative_url }}">Explore the work</a>
         <a class="btn btn--line" href="{{ '/contact/' | relative_url }}">Invite Nhasala to speak</a>
-      </div>
+      </p>
     </div>
-    {%- if site.hero_image == '' %}
-    <div class="hero__art">{% include hero-art.html %}</div>
-    {%- endif %}
-  </div>
-</section>
-
-<section class="glance-band" aria-label="At a glance">
-  <div class="wrap">
-    <p class="glance">Over a decade leading Women Leaders in Technology: <strong>14</strong> fellowship cohorts, <strong>200+</strong> women tech professionals, and <strong>1,000+</strong> attendees at flagship community events.</p>
-  </div>
-</section>
-
-<section class="band" aria-labelledby="areas-title">
-  <div class="wrap">
-    <h2 id="areas-title">Four areas of work</h2>
-    <div class="tiles">
-      {%- for pillar in site.data.pillars %}
-        {% include tile.html pillar=pillar lead=forloop.first %}
-      {%- endfor %}
+    {% if cutout and cutout != "" %}
+    <div class="hero__card">
+      {% include sparkles.html %}
+      <img src="{{ cutout | relative_url }}"{% if site.portrait_cutout_small and site.portrait_cutout_small != "" %} srcset="{{ site.portrait_cutout_small | relative_url }} 600w, {{ cutout | relative_url }} {{ site.portrait_cutout_width }}w" sizes="(min-width: 52rem) 30rem, 90vw"{% endif %} width="{{ site.portrait_cutout_width }}" height="{{ site.portrait_cutout_height }}" alt="{{ site.portrait_alt }}" loading="eager" fetchpriority="high" decoding="async">
     </div>
+    {% endif %}
   </div>
 </section>
 
-<section class="band band--tint" aria-labelledby="projects-title">
+<section class="stats-band" aria-label="At a glance">
+  <div class="wrap">
+    <ul class="stats">
+      <li class="stat"><span class="stat__icon">{% include icon.html name="calendar" %}</span><span><span class="stat__num">10+</span><span class="stat__label">years leading WLiT</span></span></li>
+      <li class="stat"><span class="stat__icon">{% include icon.html name="layers" %}</span><span><span class="stat__num">14</span><span class="stat__label">fellowship cohorts</span></span></li>
+      <li class="stat"><span class="stat__icon">{% include icon.html name="users" %}</span><span><span class="stat__num">200+</span><span class="stat__label">women tech professionals</span></span></li>
+      <li class="stat"><span class="stat__icon">{% include icon.html name="ticket" %}</span><span><span class="stat__num">1,000+</span><span class="stat__label">attendees at flagship events</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="areas-h">
+  <div class="wrap">
+    <h2 id="areas-h">Four areas of work</h2>
+    <ul class="tiles">
+      {% for p in site.data.pillars %}{% include tile.html pillar=p %}{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="band band--tint" aria-labelledby="featured-h">
   <div class="wrap">
     <div class="section-head">
-      <h2 id="projects-title">Selected projects</h2>
+      <h2 id="featured-h">Selected projects</h2>
       <a class="textlink" href="{{ '/projects/' | relative_url }}">See all projects</a>
     </div>
     <div class="cards">
-      {%- assign featured = site.data.projects | where: "featured", true %}
-      {%- for project in featured %}
-        {% include card.html project=project %}
-      {%- endfor %}
+      {% assign featured = site.data.projects | where: "featured", true %}
+      {% for pr in featured %}{% include card.html project=pr %}{% endfor %}
     </div>
   </div>
 </section>
 
-<section class="band" aria-labelledby="writing-title">
+<section class="band" aria-labelledby="writing-h">
   <div class="wrap">
-    <h2 id="writing-title">Recent writing</h2>
+    <h2 id="writing-h">Recent writing</h2>
     <ul class="rows">
-      {%- for item in site.data.writing limit: 3 %}
+      {% for w in site.data.writing limit: 3 %}
       <li class="row">
-        <p class="row__year">{{ item.year }}</p>
+        <p class="row__year">{{ w.year }}</p>
         <div>
-          <h3 class="row__title">{% if item.url != "" %}<a href="{{ item.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %} {% include flag.html item=item %}</h3>
-          <p class="row__meta">{{ item.type }}, {{ item.role }}</p>
+          <h3 class="row__title">{{ w.title }} {% include flag.html verified=w.verified %}</h3>
         </div>
       </li>
-      {%- endfor %}
+      {% endfor %}
     </ul>
-    <p class="after-rows"><a class="textlink" href="{{ '/writing/' | relative_url }}">Writing and speaking</a></p>
+    <p class="more"><a class="textlink" href="{{ '/writing/' | relative_url }}">Writing and speaking</a></p>
   </div>
 </section>
 
-{% include cta.html %}
+<section class="cta" aria-labelledby="cta-h">
+  <div class="wrap cta__inner">
+    <h2 id="cta-h">Invite Nhasala to speak, advise, or collaborate.</h2>
+    <p><a class="btn btn--ink" href="{{ '/contact/' | relative_url }}">Get in touch</a></p>
+  </div>
+</section>

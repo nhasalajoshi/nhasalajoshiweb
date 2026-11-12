@@ -1,14 +1,12 @@
-{%- assign nav = "About|/about/;Projects|/projects/;Writing and speaking|/writing/;Contact|/contact/" | split: ";" -%}
-<header class="site-header on-ink">
+<header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="brand" href="{{ '/' | relative_url }}">Nhasala Joshi</a>
     <button class="hbtn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav class="nav" id="site-nav" aria-label="Primary">
+    <nav id="site-nav" class="nav" aria-label="Main">
       <ul>
-        {%- for item in nav -%}
-          {%- assign parts = item | split: "|" %}
-        <li><a href="{{ parts[1] | relative_url }}"{% if page.url == parts[1] %} aria-current="page"{% endif %}>{{ parts[0] }}</a></li>
-        {%- endfor %}
+        {% for item in site.data.nav %}
+        <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
       </ul>
     </nav>
   </div>

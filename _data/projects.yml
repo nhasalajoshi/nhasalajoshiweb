@@ -1,55 +1,249 @@
-# One entry per project. `pillar` must match an id in pillars.yml.
-# `featured: true` shows the project on the home page (one per area).
-# `image` is a path under /assets/img/; leave empty for the placeholder.
+# One entry per project. Edit this file to add real details, links, and images.
+# pillar: primary pillar id (community, inclusion, data, governance). also: secondary pillar ids.
+# featured: true shows the project on the home page (keep it to four, one per pillar).
+# image: path to a file in /assets/img/ (add image_alt too). Empty shows a placeholder.
+# links: list of { label, url }. Do not link to pages that show funder logos or names.
+# blurb: one short line for the home page cards (falls back to summary if empty).
+# verified: false shows a "Check" flag while show_draft_flags is on in _config.yml.
+
 - id: wlit-fellowship
   title: WLiT Fellowship
   pillar: community
+  also: [inclusion]
   role: Designed and directed
+  org: Women Leaders in Technology (WLiT)
   years: 2015 to present
-  summary: A flagship fellowship that builds technical and leadership skills in young women studying computing, through bootcamps, mentoring, and community projects.
-  problem: ""
-  approach: ""
-  result: "14 fellowship cohorts and more than 200 women tech professionals."
-  image: ""
-  image_alt: ""
   featured: true
   verified: true
+  summary: A flagship fellowship that builds technical and leadership skills in young women studying computing, through bootcamps, mentoring, and community projects.
+  blurb: Technical and leadership skills for young women in computing.
+  problem: Women are scarce in technology leadership in Nepal, and few young women see a path from a computing degree to a leadership role.
+  approach: A year-long fellowship that pairs technical training with leadership development, mentoring, and a supportive community, run across more than one city.
+  result: 14 fellowship cohorts and a community of more than 200 women tech professionals.
+  image: ""
+  image_alt: ""
+  links: []
+
 - id: tech-for-trans
   title: Tech for Trans
   pillar: inclusion
+  also: [community]
   role: Spearheaded
+  org: Women Leaders in Technology (WLiT)
   years: To be confirmed
-  summary: An inclusion initiative that advances queer and trans visibility and participation in technology.
-  problem: ""
-  approach: ""
-  result: ""
-  image: ""
-  image_alt: ""
   featured: true
   verified: false
+  summary: An inclusion initiative that advances queer and trans visibility and participation in technology.
+  blurb: Queer and trans visibility and participation in tech.
+  problem: To be added.
+  approach: To be added.
+  result: To be added.
+  image: ""
+  image_alt: ""
+  links: []
+
 - id: mulcam
   title: MulCAM
   pillar: data
+  also: [inclusion]
   role: Initiated
+  org: Open Knowledge Nepal
   years: To be confirmed
-  summary: An open multilingual corpus and moderation tool designed to detect and prevent online gender-based violence.
-  problem: ""
-  approach: ""
-  result: ""
-  image: ""
-  image_alt: ""
   featured: true
   verified: false
+  summary: An open multilingual corpus and moderation tool designed to detect and prevent online gender-based violence.
+  blurb: An open tool to detect and prevent online gender-based violence.
+  problem: Abuse in Nepali and other local languages is often missed by moderation systems built for English.
+  approach: Build an open, multilingual corpus and a moderation tool that others can use and improve.
+  result: To be added.
+  image: ""
+  image_alt: ""
+  links: []
+
 - id: youth-igf-summit
   title: Youth IGF Summit
   pillar: governance
+  also: [community]
   role: Organized and facilitated
+  org: Youth IGF Nepal
   years: To be confirmed
-  summary: A summit on inclusivity, internet governance, and multistakeholder participation that brought together youth, civil society, government, and the technical community.
-  problem: ""
-  approach: ""
-  result: ""
-  image: ""
-  image_alt: ""
   featured: true
   verified: false
+  summary: A summit on inclusivity, internet governance, and multistakeholder participation that brought together youth, civil society, government, and the technical community.
+  blurb: A multistakeholder summit for young people.
+  problem: Young people rarely get a seat in internet policy conversations.
+  approach: Convene a multistakeholder summit with sessions designed for youth participation.
+  result: More than 150 participants.
+  image: ""
+  image_alt: ""
+  links: []
+
+- id: digital-rights-action-group
+  title: Digital Rights Action Group
+  pillar: data
+  also: [inclusion]
+  role: Spearheaded
+  org: Women Leaders in Technology (WLiT)
+  years: To be confirmed
+  featured: false
+  verified: false
+  summary: An action group focused on digital rights and the safety of women and queer people online.
+  problem: To be added.
+  approach: To be added.
+  result: To be added.
+  image: ""
+  image_alt: ""
+  links: []
+
+- id: safer-i
+  title: Safer-I Campaign
+  pillar: data
+  also: [inclusion]
+  role: Oversaw execution
+  org: Women Leaders in Technology (WLiT)
+  years: To be confirmed
+  featured: false
+  verified: false
+  summary: A campaign on safer online spaces.
+  problem: To be added.
+  approach: To be added.
+  result: To be added.
+  image: ""
+  image_alt: ""
+  links: []
+
+- id: women-data-insights
+  title: Women Data Insights
+  pillar: data
+  also: [inclusion]
+  role: Spearheaded
+  org: Women Leaders in Technology (WLiT)
+  years: To be confirmed
+  featured: false
+  verified: false
+  summary: A data initiative that makes evidence about women's participation in the economy and in technology easier to find and use.
+  problem: To be added.
+  approach: To be added.
+  result: To be added.
+  image: ""
+  image_alt: ""
+  links: []
+
+- id: women-in-data
+  title: Women in Data
+  pillar: data
+  also: [community]
+  role: Launched the steering committee
+  org: Women Leaders in Technology (WLiT)
+  years: To be confirmed
+  featured: false
+  verified: false
+  summary: A network that brings women into data careers and decisions, guided by a steering committee launched within a national data for development program.
+  problem: To be added.
+  approach: To be added.
+  result: To be added.
+  image: ""
+  image_alt: ""
+  links: []
+
+- id: women-entrepreneurship-data
+  title: Women Entrepreneurship Data
+  pillar: data
+  also: [inclusion]
+  role: Project lead
+  org: Women Leaders in Technology (WLiT)
+  years: 2019 to 2023
+  featured: false
+  verified: true
+  summary: An open data initiative that makes statistics on women's entrepreneurship accessible, so policy and investment decisions rest on evidence.
+  problem: Data on women entrepreneurs was scattered, hard to find, and hard to use.
+  approach: Landscape research on employment and entrepreneurship policy, open data publishing, and data and digital literacy modules for women entrepreneurs and ecosystem stakeholders.
+  result: To be added.
+  image: ""
+  image_alt: ""
+  links: []
+
+- id: digital-literacy-workshops
+  title: Gender Data 101 and digital roadmap workshops
+  pillar: data
+  also: [community]
+  role: Facilitated
+  org: Open Knowledge Nepal
+  years: 2024 to present
+  featured: false
+  verified: false
+  summary: Workshops and training on digital literacy, data skills, and gender data.
+  problem: To be added.
+  approach: To be added.
+  result: To be added.
+  image: ""
+  image_alt: ""
+  links: []
+
+- id: igf-2025
+  title: Internet Governance Forum 2025
+  pillar: governance
+  also: [community]
+  role: Represented the Nepali community
+  org: Internet Society Nepal Chapter
+  years: 2025
+  featured: false
+  verified: true
+  summary: Took part in the global Internet Governance Forum in Norway as a community representative.
+  problem: To be added.
+  approach: To be added.
+  result: To be added.
+  image: ""
+  image_alt: ""
+  links: []
+
+- id: gdg-flagship-events
+  title: Google I/O Extended and DevFest events
+  pillar: community
+  also: []
+  role: Led as lead organizer
+  org: GDG Kathmandu
+  years: To be confirmed
+  featured: false
+  verified: false
+  summary: Flagship developer community events in Kathmandu.
+  problem: To be added.
+  approach: To be added.
+  result: More than 1,000 attendees across events.
+  image: ""
+  image_alt: ""
+  links: []
+
+- id: iwd-south-asia
+  title: IWD South Asia Summit
+  pillar: community
+  also: [inclusion]
+  role: Initiated and led panels
+  org: GDG Kathmandu
+  years: To be confirmed
+  featured: false
+  verified: false
+  summary: A sub-regional International Women's Day summit connecting chapters in Pakistan, Sri Lanka, Bangladesh, and Nepal, with panels on diversity, equity, and inclusion.
+  problem: To be added.
+  approach: To be added.
+  result: To be added.
+  image: ""
+  image_alt: ""
+  links: []
+
+- id: mentoring-youth-innovators
+  title: Mentoring young innovators
+  pillar: community
+  also: []
+  role: Mentor
+  org: Purak Asia
+  years: 2024
+  featured: false
+  verified: true
+  summary: Mentored four young innovators building solutions for governance, climate, sustainability, and gender rights.
+  problem: To be added.
+  approach: To be added.
+  result: To be added.
+  image: ""
+  image_alt: ""
+  links: []

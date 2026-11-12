@@ -1,44 +1,54 @@
-# The four areas of work. Order here is the order on the site.
-# `short` is the badge label.
-# The first item is the lead area and renders as the large tile.
+# The four areas of work. Community comes first because it is the core of the work.
+# line: one short sentence for the home page tiles. statement: longer text for the About page.
+# Copy is a draft written in third person. Edit freely.
+
 - id: community
-  short: Community
   name: Community and ecosystem building
-  summary: Fellowships, networks, and convenings that help more people enter technology, stay, and lead.
-  statement: Technology careers last when people have a cohort, a mentor, and a room to grow into.
+  badge: Community
+  url: /about/#community
+  line: "Fellowships, networks, and convenings."
+  featured: true
+  statement: Nhasala builds the fellowships, networks, and convenings that let more people enter technology, stay, and lead. More than a decade of leading Women Leaders in Technology (WLiT), alongside developer and leadership communities across Kathmandu and South Asia, has shaped a simple practice. Train people, connect them, and hand the next cohort the tools to build their own spaces.
   looks_like:
-    - Fellowship programs that pair technical training with leadership skills
-    - Bootcamps, mentoring circles, and community projects
-    - Flagship community events that bring practitioners together
-  orgs: [wlit]
-  verified: false
+    - Designing and directing a multi-city fellowship for women in computing
+    - Leading developer community events that draw more than a thousand people
+    - Starting regional gatherings that connect chapters across South Asia
+    - Mentoring young innovators and early-career women
+  orgs: [wlit, gdg, wtm, shapers, women-lead, purak]
+
 - id: inclusion
-  short: Inclusion
   name: Inclusion
-  summary: Room for women, queer and trans people, and others the tech ecosystem leaves behind.
-  statement: An ecosystem is only as strong as the people it lets in.
+  badge: Inclusion
+  url: /about/#inclusion
+  line: "Room for everyone in tech."
+  statement: Technology works better when the people it affects help to design it. Nhasala creates room for women, queer and trans people, and other communities the mainstream tech ecosystem leaves behind.
   looks_like:
-    - Programs designed with and for queer and trans technologists
-    - Visibility and participation initiatives
-  orgs: [wlit]
-  verified: false
+    - Programs that center women, queer, and trans people in technology
+    - Inclusive program design that removes barriers before they appear
+    - Visibility and leadership pathways for people who are rarely seen in tech
+  orgs: [wlit, women-lead]
+
 - id: data
-  short: Rights, data, civic tech
   name: Digital rights, data, and civic tech
-  summary: Open data, gender data, and civic tools that document harm and push for accountability.
-  statement: What is not counted cannot be fixed, so the data has to exist and be open.
+  badge: Rights, data, civic tech
+  url: /about/#data
+  line: "Open data and safer online spaces."
+  statement: Nhasala works with open data, gender data, and civic tools that document harm and push for accountability, from open datasets on women's entrepreneurship to MulCAM, an open multilingual corpus and moderation tool that helps detect and prevent online gender-based violence.
   looks_like:
-    - Open, multilingual datasets
-    - Tools that help detect and prevent online gender-based violence
-  orgs: [wlit]
-  verified: false
+    - Open datasets that make gender and entrepreneurship evidence usable
+    - Campaigns and action groups on digital rights and online safety
+    - Open tools for detecting and preventing online gender-based violence
+    - Data and digital literacy training for women and ecosystem stakeholders
+  orgs: [okn, wlit]
+
 - id: governance
-  short: Internet governance
   name: Internet governance
-  summary: Young people's and women's voices in the spaces where internet policy is shaped.
-  statement: Internet policy should be shaped by the people it affects.
+  badge: Internet governance
+  url: /about/#governance
+  line: "Youth and women's voices in policy."
+  statement: Nhasala brings young people's and women's voices into the multistakeholder spaces where internet policy is shaped, from Youth IGF Nepal to the global Internet Governance Forum.
   looks_like:
-    - Youth and multistakeholder summits
-    - Facilitation that brings youth, civil society, government, and the technical community together
-  orgs: [wlit]
-  verified: false
+    - Organizing and facilitating youth internet governance summits
+    - Representing the Nepali community at the global Internet Governance Forum
+    - Building understanding of multistakeholder processes among young people
+  orgs: [yigf, isoc]

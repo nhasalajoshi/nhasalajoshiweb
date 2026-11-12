@@ -1,92 +1,90 @@
-/* Progressive enhancements. The site works fully without this file. */
+/* Small progressive enhancements. The site works without JavaScript. */
 (function () {
   'use strict';
+  var root = document.documentElement;
 
-  /* 1. Menu toggle */
+  /* Mobile menu */
   var header = document.querySelector('.site-header');
-  var toggle = document.querySelector('.nav-toggle');
-  if (header && toggle) {
-    var setOpen = function (open) {
-      header.classList.toggle('nav-open', open);
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    };
-    toggle.addEventListener('click', function () {
-      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+  var navBtn = document.querySelector('.nav-toggle');
+  function setNav(open) {
+    if (!header || !navBtn) return;
+    header.classList.toggle('nav-open', open);
+    navBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  if (navBtn) {
+    navBtn.addEventListener('click', function () {
+      setNav(navBtn.getAttribute('aria-expanded') !== 'true');
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && header.classList.contains('nav-open')) {
-        setOpen(false);
-        toggle.focus();
+      if (e.key === 'Escape' && navBtn.getAttribute('aria-expanded') === 'true') {
+        setNav(false);
+        navBtn.focus();
       }
     });
-    header.querySelectorAll('.nav a').forEach(function (a) {
-      a.addEventListener('click', function () { setOpen(false); });
-    });
+    var navLinks = document.querySelectorAll('.nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+      navLinks[i].addEventListener('click', function () { setNav(false); });
+    }
   }
 
-  /* 2. Project filter */
-  var chips = document.querySelectorAll('.chip[data-filter]');
-  var entries = document.querySelectorAll('.entry[data-pillar]');
-  var count = document.querySelector('[data-count]');
-  if (chips.length && entries.length) {
-    var areas = Array.prototype.map.call(chips, function (c) { return c.dataset.filter; });
-    var labelFor = function (f) {
-      var chip = document.querySelector('.chip[data-filter="' + f + '"]');
-      return chip ? chip.textContent.trim() : '';
-    };
+  /* Project filter: #community, #inclusion, #data, #governance */
+  var list = document.querySelector('[data-filter-list]');
+  if (list) {
+    var chips = document.querySelectorAll('[data-filter]');
+    var entries = list.querySelectorAll('.entry');
+    var countEl = document.querySelector('[data-count]');
+    var ids = ['community', 'inclusion', 'data', 'governance'];
 
-    var apply = function (filter, targetId) {
+    var apply = function (id, updateHash) {
       var shown = 0;
-      entries.forEach(function (el) {
-        var show = filter === 'all' || el.dataset.pillar === filter;
-        el.hidden = !show;
-        el.classList.toggle('is-target', el.id === targetId);
-        if (show) shown++;
-      });
-      chips.forEach(function (c) {
-        c.setAttribute('aria-pressed', c.dataset.filter === filter ? 'true' : 'false');
-      });
-      if (count) {
-        var noun = shown === 1 ? 'project' : 'projects';
-        count.textContent = filter === 'all'
-          ? 'Showing all ' + shown + ' ' + noun
-          : 'Showing ' + shown + ' ' + noun + ' in ' + labelFor(filter);
+      for (var i = 0; i < entries.length; i++) {
+        var pillars = (entries[i].getAttribute('data-pillars') || '').split(' ');
+        var match = id === 'all' || pillars.indexOf(id) !== -1;
+        entries[i].hidden = !match;
+        if (match) shown++;
+      }
+      for (var j = 0; j < chips.length; j++) {
+        chips[j].setAttribute('aria-pressed', chips[j].getAttribute('data-filter') === id ? 'true' : 'false');
+      }
+      if (countEl) {
+        countEl.textContent = 'Showing ' + shown + (shown === 1 ? ' project' : ' projects') + (id === 'all' ? '' : ' in this area');
+      }
+      if (updateHash && window.history && history.replaceState) {
+        history.replaceState(null, '', id === 'all' ? location.pathname + location.search : '#' + id);
       }
     };
+
+    for (var c = 0; c < chips.length; c++) {
+      chips[c].addEventListener('click', function () {
+        apply(this.getAttribute('data-filter'), true);
+      });
+    }
 
     var fromHash = function () {
-      var h = decodeURIComponent(location.hash.slice(1));
-      if (h && h !== 'all' && areas.indexOf(h) !== -1) {
-        apply(h, null);
-      } else if (h && document.getElementById(h) && document.getElementById(h).classList.contains('entry')) {
-        apply('all', h);
-        var target = document.getElementById(h);
-        target.scrollIntoView();
-        target.focus({ preventScroll: true });
+      var h = decodeURIComponent((location.hash || '').replace('#', ''));
+      if (ids.indexOf(h) !== -1) {
+        apply(h, false);
       } else {
-        apply('all', null);
+        apply('all', false);
+        if (h) {
+          var target = document.getElementById(h);
+          if (target) target.scrollIntoView();
+        }
       }
     };
-
-    chips.forEach(function (c) {
-      c.addEventListener('click', function () {
-        var f = c.dataset.filter;
-        history.replaceState(null, '', f === 'all' ? location.pathname : '#' + f);
-        apply(f, null);
-      });
-    });
-    window.addEventListener('hashchange', fromHash);
     fromHash();
+    window.addEventListener('hashchange', fromHash);
   }
 
-  /* 3. Copy buttons */
+  /* Copy bio buttons */
   var status = document.querySelector('[data-copy-status]');
-  var announce = function (msg) {
+  var copyBtns = document.querySelectorAll('[data-copy]');
+  function announce(msg) {
     if (!status) return;
-    status.textContent = '';
-    setTimeout(function () { status.textContent = msg; }, 50);
-  };
-  var fallbackCopy = function (text) {
+    status.textContent = msg;
+    setTimeout(function () { status.textContent = ''; }, 3000);
+  }
+  function fallbackCopy(text) {
     var ta = document.createElement('textarea');
     ta.value = text;
     ta.setAttribute('readonly', '');
@@ -95,26 +93,24 @@
     document.body.appendChild(ta);
     ta.select();
     var ok = false;
-    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    try { ok = document.execCommand('copy'); } catch (e) {}
     document.body.removeChild(ta);
     return ok;
-  };
-  document.querySelectorAll('[data-copy]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var src = document.getElementById(btn.dataset.copy);
-      if (!src) return;
-      var text = src.textContent.trim();
-      var label = btn.textContent.replace(/^Copy /, '');
-      var done = function () { announce('Copied the ' + label + ' to the clipboard.'); };
-      var fail = function () {
-        if (fallbackCopy(text)) done();
-        else announce('Copy did not work. Select the text and copy it manually.');
-      };
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text).then(done, fail);
+  }
+  for (var k = 0; k < copyBtns.length; k++) {
+    copyBtns[k].addEventListener('click', function () {
+      var target = document.getElementById(this.getAttribute('data-copy'));
+      if (!target) return;
+      var text = target.textContent.trim();
+      var label = this.textContent.replace('Copy ', '');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { announce('Copied the ' + label + '.'); },
+          function () { announce(fallbackCopy(text) ? 'Copied the ' + label + '.' : 'Copy did not work. Select the text and copy it.'); }
+        );
       } else {
-        fail();
+        announce(fallbackCopy(text) ? 'Copied the ' + label + '.' : 'Copy did not work. Select the text and copy it.');
       }
     });
-  });
+  }
 })();
